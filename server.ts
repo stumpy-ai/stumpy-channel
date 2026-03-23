@@ -34,6 +34,7 @@ try {
 } catch {}
 
 const TOKEN = process.env.STUMPY_TOKEN
+const WS_URL = process.env.STUMPY_WS_URL ?? 'wss://stumpy.ai/channel/connect'
 
 // Last-resort safety net — keep serving tools on unhandled errors.
 process.on('unhandledRejection', err => {
@@ -106,7 +107,7 @@ function connectWebSocket(team: string, name: string, token: string): Promise<st
       fn(value as string)
     }
 
-    const socket = new WebSocket('wss://stumpy.ai/channel/connect')
+    const socket = new WebSocket(WS_URL)
 
     socket.onopen = () => {
       process.stderr.write(`stumpy channel: WebSocket connected, authenticating...\n`)

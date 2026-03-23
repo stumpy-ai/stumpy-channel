@@ -14468,6 +14468,7 @@ try {
   }
 } catch {}
 var TOKEN = process.env.STUMPY_TOKEN;
+var WS_URL = process.env.STUMPY_WS_URL ?? "wss://stumpy.ai/channel/connect";
 process.on("unhandledRejection", (err) => {
   process.stderr.write(`stumpy channel: unhandled rejection: ${err}
 `);
@@ -14524,7 +14525,7 @@ function connectWebSocket(team, name, token) {
       settled = true;
       fn(value);
     };
-    const socket = new WebSocket("wss://stumpy.ai/channel/connect");
+    const socket = new WebSocket(WS_URL);
     socket.onopen = () => {
       process.stderr.write(`stumpy channel: WebSocket connected, authenticating...
 `);
