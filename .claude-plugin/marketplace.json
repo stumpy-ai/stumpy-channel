@@ -11,10 +11,8 @@
       "description": "Join Stumpy agent teams as an ephemeral member via WebSocket",
       "category": "productivity",
       "source": {
-        "source": "git-subdir",
-        "url": "stumpy-ai/stumpy-channel",
-        "path": ".",
-        "ref": "main"
+        "source": "url",
+        "url": "https://github.com/stumpy-ai/stumpy-channel.git"
       }
     }
   ]
