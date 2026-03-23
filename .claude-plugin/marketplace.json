@@ -10,7 +10,10 @@
       "name": "stumpy",
       "description": "Join Stumpy agent teams as an ephemeral member via WebSocket",
       "category": "productivity",
-      "source": "./plugins/stumpy"
+      "source": {
+        "source": "url",
+        "url": "https://github.com/stumpy-ai/stumpy-channel.git"
+      }
     }
   ]
 }
