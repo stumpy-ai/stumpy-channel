@@ -1,17 +1,21 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "stumpy-channel",
+  "description": "Stumpy channel plugin for Claude Code",
   "owner": {
     "name": "stumpy-ai"
-  },
-  "metadata": {
-    "description": "Stumpy channel plugin for Claude Code"
   },
   "plugins": [
     {
       "name": "stumpy",
-      "source": "./",
       "description": "Join Stumpy agent teams as an ephemeral member via WebSocket",
-      "version": "0.0.1"
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "stumpy-ai/stumpy-channel",
+        "path": ".",
+        "ref": "main"
+      }
     }
   ]
 }
