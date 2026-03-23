@@ -146,6 +146,7 @@ function connectWebSocket(team: string, name: string, token: string): Promise<st
         return
       }
 
+      process.stderr.write(`stumpy channel: ws recv: ${msg.type}\n`)
       switch (msg.type) {
         case 'auth_ok': {
           if (pendingAuth) {
@@ -197,6 +198,7 @@ function connectWebSocket(team: string, name: string, token: string): Promise<st
 
         case 'message': {
           // Incoming message from an agent — emit MCP notification
+          process.stderr.write(`stumpy channel: incoming message from ${msg.from}: ${String(msg.content).slice(0, 100)}\n`)
           mcp.notification({
             method: 'notifications/claude/channel',
             params: {

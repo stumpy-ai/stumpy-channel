@@ -14560,6 +14560,8 @@ function connectWebSocket(team, name, token) {
 `);
         return;
       }
+      process.stderr.write(`stumpy channel: ws recv: ${msg.type}
+`);
       switch (msg.type) {
         case "auth_ok": {
           if (pendingAuth) {
@@ -14606,6 +14608,8 @@ function connectWebSocket(team, name, token) {
           break;
         }
         case "message": {
+          process.stderr.write(`stumpy channel: incoming message from ${msg.from}: ${String(msg.content).slice(0, 100)}
+`);
           mcp.notification({
             method: "notifications/claude/channel",
             params: {
