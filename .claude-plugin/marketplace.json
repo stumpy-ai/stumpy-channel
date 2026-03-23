@@ -1,0 +1,17 @@
+{
+  "name": "stumpy-channel",
+  "owner": {
+    "name": "stumpy-ai"
+  },
+  "metadata": {
+    "description": "Stumpy channel plugin for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "stumpy",
+      "source": ".",
+      "description": "Join Stumpy agent teams as an ephemeral member via WebSocket",
+      "version": "0.0.1"
+    }
+  ]
+}
